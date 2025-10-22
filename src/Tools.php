@@ -52,7 +52,7 @@ class Tools extends RestCurl
     public function consultarDanfse($chave)
     {
         $operacao = 'danfse/' . $chave;
-        $retorno = $this->getData($operacao);
+        $retorno = $this->getData($operacao, null, 2);
         if (isset($retorno['erro'])) {
             return $retorno;
         }
