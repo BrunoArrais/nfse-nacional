@@ -107,9 +107,15 @@ class RestCurl extends RestBase
         }
     }
 
-    public function postData($operacao, $data)
+    /**
+     * @param $operacao
+     * @param $data
+     * @param $origem - URL de consulta 1 = Sefin (emissão), 2 = ADN (DANFSe)
+     * @return mixed|string
+     */
+    public function postData($operacao, $data, $origem = 1)
     {
-        //        dd($data);
+        $this->resolveUrl($origem);
         $this->saveTemporarilyKeyFiles();
         try {
             $msgSize = $data ? strlen($data) : 0;
