@@ -326,12 +326,6 @@ class Dps implements DpsInterface
                 $this->std->infdps->prest->regtrib->opsimpnac,
                 true
             );
-            $this->dom->addChild(
-                $regtrib_inner,
-                'regEspTrib',
-                $this->std->infdps->prest->regtrib->regesptrib,
-                true
-            );
             if (isset($this->std->infdps->prest->regtrib->regaptribsn)) {
                 $this->dom->addChild(
                     $regtrib_inner,
@@ -339,6 +333,12 @@ class Dps implements DpsInterface
                     $this->std->infdps->prest->regtrib->regaptribsn
                 );
             }
+            $this->dom->addChild(
+                $regtrib_inner,
+                'regEspTrib',
+                $this->std->infdps->prest->regtrib->regesptrib,
+                true
+            );
 
         }
         if (isset($this->std->infdps->toma)) {
