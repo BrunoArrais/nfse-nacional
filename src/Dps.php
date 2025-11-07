@@ -556,7 +556,82 @@ class Dps implements DpsInterface
         //TODO Fazer grupo comExt
         //TODO Fazer grupo lsadppu
         //TODO Fazer grupo obra
-        //TODO Fazer grupo atvEvento
+if (isset($this->std->infdps->serv->atvevento)) {
+    $atvEvento_inner = $this->dom->createElement('atvEvento');
+    $serv_inner->appendChild($atvEvento_inner);
+
+    // Campo: xNome
+    if (isset($this->std->infdps->serv->atvevento->xnome)) {
+        $this->dom->addChild(
+            $atvEvento_inner,
+            'xNome',
+            $this->std->infdps->serv->atvevento->xnome,
+            true
+        );
+    }
+
+    // Campo: dtIni
+    if (isset($this->std->infdps->serv->atvevento->dtini)) {
+        $this->dom->addChild(
+            $atvEvento_inner,
+            'dtIni',
+            $this->std->infdps->serv->atvevento->dtini,
+            true
+        );
+    }
+
+    // Campo: dtFim
+    if (isset($this->std->infdps->serv->atvevento->dtfim)) {
+        $this->dom->addChild(
+            $atvEvento_inner,
+            'dtFim',
+            $this->std->infdps->serv->atvevento->dtfim,
+            true
+        );
+    }
+
+    // Endereço do evento
+    if (isset($this->std->infdps->serv->atvevento->end)) {
+        $end_evento_inner = $this->dom->createElement('end');
+        $atvEvento_inner->appendChild($end_evento_inner);
+
+        if (isset($this->std->infdps->serv->atvevento->end->cep)) {
+            $this->dom->addChild(
+                $end_evento_inner,
+                'CEP',
+                $this->std->infdps->serv->atvevento->end->cep,
+                true
+            );
+        }
+
+        if (isset($this->std->infdps->serv->atvevento->end->xlgr)) {
+            $this->dom->addChild(
+                $end_evento_inner,
+                'xLgr',
+                $this->std->infdps->serv->atvevento->end->xlgr,
+                true
+            );
+        }
+
+        if (isset($this->std->infdps->serv->atvevento->end->nro)) {
+            $this->dom->addChild(
+                $end_evento_inner,
+                'nro',
+                $this->std->infdps->serv->atvevento->end->nro,
+                true
+            );
+        }
+
+        if (isset($this->std->infdps->serv->atvevento->end->xbairro)) {
+            $this->dom->addChild(
+                $end_evento_inner,
+                'xBairro',
+                $this->std->infdps->serv->atvevento->end->xbairro,
+                true
+            );
+        }
+    }
+}
         //TODO Fazer grupo explRod
         //TODO Fazer grupo infoCompl
 
